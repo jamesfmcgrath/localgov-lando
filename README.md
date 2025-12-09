@@ -134,18 +134,6 @@ lando xdebug-off                  # Disable Xdebug
 
 ✅ Perfect! Use `lando composer` for all Composer commands.
 
-### Starting Fresh
-
-```bash
-lando destroy -y
-lando start --lando-file .lando.bootstrap.yml  # If bootstrap file still exists
-# OR
-lando start                                     # If using .lando.dist.yml
-lando init-project                              # Only if using bootstrap
-lando rebuild -y
-lando drush site:install localgov -y
-```
-
 ## Learn More
 
 - [LocalGov Drupal Documentation](https://docs.localgovdrupal.org/)
