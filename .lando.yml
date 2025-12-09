@@ -2,8 +2,14 @@ name: localgov
 recipe: drupal10
 config:
   webroot: .
-  php: "8.3"
+  php: '8.3'
   database: mariadb:10.6
+services:
+  database:
+    creds:
+      user: database
+      password: database
+      database: database
 
 tooling:
   init-project:
@@ -16,5 +22,5 @@ tooling:
       - rm .lando.yml
       - mv README.md SETUP.md
       - echo "✅ Project files downloaded."
-      - echo "🔧 Run 'lando destroy -y && lando start' to apply full configuration."
+      - echo "🔧 Run 'lando rebuild -y' to apply full configuration."
       - echo "📝 Lando will automatically use .lando.dist.yml"
