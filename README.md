@@ -62,18 +62,6 @@ Your site will be at: https://localgov.lndo.site
 
 **No manual copying required!** Lando reads `.lando.dist.yml` automatically when `.lando.yml` doesn't exist.
 
-## Customizing Your Setup (Optional)
-
-If you want to customize your local Lando configuration:
-
-```bash
-cp .lando.dist.yml .lando.yml
-# Edit .lando.yml with your preferences
-lando rebuild -y
-```
-
-The `.lando.yml` file is gitignored, so your customizations stay local.
-
 ## What You Get
 
 Your environment includes:
