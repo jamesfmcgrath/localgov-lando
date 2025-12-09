@@ -32,15 +32,15 @@ This downloads all LocalGov Drupal files and removes the bootstrap configuration
 
 ### Step 4: Rebuild with full LocalGov configuration
 
-To avoid conflicts `.lando.yml` is renamed to `.lando.bootstrap.yml` and README.md to LANDO.md. These files can be deleted after successful setup.
-
-NOTE: `.lando.dist.yml` PHP version must be updated to 8.3 for this install to work. Otherwise you will get a 500 error for APPSERVER URLS.
+IMPORTANT: `.lando.dist.yml` PHP version must be updated to 8.3 for this install to work. Otherwise you will get a 500 error for APPSERVER URLS.
 
 ```bash
 lando rebuild -y
 ```
 
 Lando automatically uses `.lando.dist.yml` from the downloaded project.
+
+To avoid conflicts `.lando.yml` is renamed to `.lando.bootstrap.yml` and README.md to LANDO.md. These files can be deleted after successful setup.
 
 ### Step 5: Install Drupal
 
