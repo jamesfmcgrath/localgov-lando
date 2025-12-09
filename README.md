@@ -12,14 +12,14 @@ A starter repository for LocalGov Drupal that requires **only Lando** - no Compo
 ### Step 1: Clone this repository
 
 ```bash
-git clone https://github.com/your-org/localgov-lando.git localgov-learning
-cd localgov-learning
+git clone https://github.com/your-org/localgov-lando.git localgov
+cd localgov
 ```
 
 ### Step 2: Start Lando with bootstrap configuration
 
 ```bash
-lando start --lando-file .lando.bootstrap.yml
+lando start
 ```
 
 ### Step 3: Initialize the LocalGov Drupal project
@@ -32,8 +32,10 @@ This downloads all LocalGov Drupal files and removes the bootstrap configuration
 
 ### Step 4: Rebuild with full LocalGov configuration
 
+NOTE: `.lando.dist.yml` PHP version must be updated to 8.3 for this to work.
+
 ```bash
-lando rebuild -y
+lando destroy -y && lando start
 ```
 
 Lando automatically uses `.lando.dist.yml` from the downloaded project.
@@ -41,7 +43,7 @@ Lando automatically uses `.lando.dist.yml` from the downloaded project.
 ### Step 5: Install Drupal
 
 ```bash
-lando drush site:install localgov -y
+lando drush si localgov -y
 ```
 
 ### Step 6: Access your site
@@ -50,11 +52,11 @@ lando drush site:install localgov -y
 lando info
 ```
 
-Your site will be at: https://localgov-learning.lndo.site
+Your site will be at: https://localgov.lndo.site
 
 ## How It Works
 
-1. **Bootstrap phase** - Uses minimal `.lando.bootstrap.yml` to get PHP/Composer
+1. **Bootstrap phase** - Uses minimal `.lando.yml` to get PHP/Composer
 2. **Download phase** - `lando init-project` downloads LocalGov Drupal (includes `.lando.dist.yml`)
 3. **Production phase** - Lando automatically uses `.lando.dist.yml` for full configuration
 
