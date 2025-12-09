@@ -11,9 +11,11 @@ A starter repository for LocalGov Drupal that requires **only Lando** - no Compo
 
 ### Step 1: Clone this repository
 
+You can change LGD_DEMO to whatever folder name you want to use. This is the folder where LocalGov Drupal files will reside.
+
 ```bash
-git clone https://github.com/your-org/localgov-lando.git localgov
-cd localgov
+git clone git@github.com:jamesfmcgrath/localgov-lando.git LGD_DEMO
+cd LGD_DEMO
 ```
 
 ### Step 2: Start Lando with bootstrap configuration
