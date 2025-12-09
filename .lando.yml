@@ -20,7 +20,6 @@ tooling:
       - bash -c "shopt -s dotglob && mv tmp/* tmp/.* . 2>/dev/null || true"
       - rm -rf tmp
       - rm .lando.yml
-      - mv README.md SETUP.md
       - echo "✅ Project files downloaded."
       - echo "🔧 Run 'lando rebuild -y' to apply full configuration."
       - echo "📝 Lando will automatically use .lando.dist.yml"
