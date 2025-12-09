@@ -16,10 +16,14 @@ tooling:
     service: appserver
     description: Initialize LocalGov Drupal project (run this first!)
     cmd:
+      - mv README.md LANDO.md
       - composer create-project --stability stable localgovdrupal/localgov-project tmp
       - bash -c "shopt -s dotglob && mv tmp/* tmp/.* . 2>/dev/null || true"
       - rm -rf tmp
-      - rm .lando.yml
+      - mv .lando.yml .lando.bootstrap.yml
       - echo "✅ Project files downloaded."
-      - echo "🔧 Run 'lando rebuild -y' to apply full configuration."
+      - echo "✅ `.lando.yml` is renamed to `.lando.bootstrap.yml` to avoid conflicts."
+      - echo "✅ README.md is renamed to LANDO.md to avoid conflicts."
+      - echo "✅ These files can be deleted after successful setup."
+-     - echo "🔧 Run 'lando rebuild -y' to apply full configuration."
       - echo "📝 Lando will automatically use .lando.dist.yml"
