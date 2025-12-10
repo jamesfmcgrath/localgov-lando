@@ -1,132 +1,58 @@
-# LocalGov Drupal with Lando Starter
+# LocalGov Drupal - Lando Bootstrap
 
-A starter repository for LocalGov Drupal that requires **only Lando** - no Composer or PHP needed on your host machine.
+[![Use this template](https://img.shields.io/badge/Use%20this%20template-2ea44f?style=for-the-badge)](https://github.com/YOUR-USERNAME/localgov-lando/generate)
 
-## Prerequisites
+Bootstrap a new LocalGov Drupal project with Lando in seconds.
 
-- [Lando](https://lando.dev/) installed
-- **No Composer or PHP required!**
+## 🚀 Quick Start
 
-## Installation
+### Option 1: Use Template (Recommended)
 
-### Step 1: Clone this repository
+1. Click **"Use this template"** button above
+2. Create your new repository
+3. Clone your new repository locally
+4. Run `lando start`
+5. Run `lando init-project`
+6. Run `lando rebuild -y`
 
-You can change LGD_DEMO to whatever folder name you want to use. This is the folder where LocalGov Drupal files will reside.
-
-```bash
-git clone git@github.com:jamesfmcgrath/localgov-lando.git LGD_DEMO
-cd LGD_DEMO
-```
-
-### Step 2: Start Lando with bootstrap configuration
+### Option 2: Manual Clone
 
 ```bash
+git clone https://github.com/YOUR-USERNAME/localgov-lando.git my-project
+cd my-project
+rm -rf .git  # Remove git history
+git init     # Start fresh
 lando start
-```
-
-### Step 3: Initialize the LocalGov Drupal project
-
-```bash
 lando init-project
-```
-
-This downloads all LocalGov Drupal files and removes the bootstrap configuration.
-
-### Step 4: Rebuild with full LocalGov configuration
-
-IMPORTANT: `.lando.dist.yml` PHP version must be updated to 8.3 for this install to work. Otherwise you will get a 500 error for APPSERVER URLS.
-
-```bash
 lando rebuild -y
 ```
 
-Lando automatically uses `.lando.dist.yml` from the downloaded project.
+## ⚠️ Important
 
-To avoid conflicts `.lando.yml` is renamed to `.lando.bootstrap.yml` and README.md to LANDO.md. These files can be deleted after successful setup.
+**This is a bootstrap repository.** After running `lando init-project`:
 
-### Step 5: Install Drupal
+- `.lando.yml` is renamed to `.lando.bootstrap.yml`
+- LocalGov's own `.lando.dist.yml` takes over
+- You can safely delete `.lando.bootstrap.yml` and `LANDO.md`
 
-```bash
-lando drush si localgov -y
-```
+## 📝 What Happens
 
-### Step 6: Access your site
+1. Downloads LocalGov Drupal via Composer
+2. Renames bootstrap files to avoid conflicts
+3. Sets up your project structure
+4. Hands off to LocalGov's configuration
 
-```bash
-lando info
-```
+## 🔧 Requirements
 
-Your site will be at: https://localgov.lndo.site
+- [Lando](https://lando.dev/) installed
+- Docker running
+- Composer (provided by Lando)
 
-## How It Works
+## 📚 Resources
 
-1. **Bootstrap phase** - Uses minimal `.lando.yml` to get PHP/Composer
-2. **Download phase** - `lando init-project` downloads LocalGov Drupal (includes `.lando.dist.yml`)
-3. **Production phase** - Lando automatically uses `.lando.dist.yml` for full configuration
-
-**No manual copying required!** Lando reads `.lando.dist.yml` automatically when `.lando.yml` doesn't exist.
-
-## What You Get
-
-Your environment includes:
-
-- **Drupal 10** with LocalGov Drupal distribution
-- **Solr 8** for search (http://solr-sitewide.localgov.lndo.site:8983)
-- **MailHog** for email testing (https://mail.localgov-learning.lndo.site)
-- **Adminer** for database management (https://adminer.localgov-learning.lndo.site)
-- **ChromeDriver** for automated testing
-- **Node.js 20** for frontend tooling
-- **Xdebug** for debugging (disabled by default)
-
-## Daily Development
-
-### Composer Commands
-
-```bash
-lando composer require drupal/admin_toolbar
-lando composer update
-```
-
-### Drush Commands
-
-```bash
-lando drush cr                    # Clear cache
-lando drush uli                   # Get login link
-lando drush cex -y                # Export configuration
-```
-
-### Code Quality Tools
-
-```bash
-lando phpcs                       # PHP CodeSniffer
-lando phix                        # Auto-fix coding standards
-lando phpstan                     # Static analysis
-lando sca                         # Full static code analysis
-lando phpunit                     # Run PHPUnit tests
-```
-
-### Frontend Tools
-
-```bash
-lando install-frontend            # Install frontend dependencies
-lando eslint-js path/to/file.js   # Lint JavaScript
-lando stylelint path/to/file.css  # Lint CSS
-```
-
-### Debugging
-
-```bash
-lando xdebug-on                   # Enable Xdebug
-lando xdebug-off                  # Disable Xdebug
-```
-
-## Troubleshooting
-
-### "I don't have Composer installed"
-
-✅ Perfect! Use `lando composer` for all Composer commands.
-
-## Learn More
-
-- [LocalGov Drupal Documentation](https://docs.localgovdrupal.org/)
+- [LocalGov Drupal](https://localgovdrupal.org/)
 - [Lando Documentation](https://docs.lando.dev/)
+
+---
+
+**Note:** This template automatically configures itself and steps aside for the LocalGov project structure.
