@@ -14,6 +14,7 @@ Bootstrap a new LocalGov Drupal project with Lando in seconds.
 4. Run `lando start`
 5. Run `lando init-project`
 6. Run `lando rebuild -y`
+7. Run `lando drush si localgov -y`
 
 ### Option 2: Manual Clone
 
@@ -25,6 +26,7 @@ git init     # Start fresh
 lando start
 lando init-project
 lando rebuild -y
+lando drush si localgov -y
 ```
 
 ## ⚠️ Important
