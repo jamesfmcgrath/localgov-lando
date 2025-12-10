@@ -1,6 +1,6 @@
 # LocalGov Drupal - Lando Bootstrap
 
-[![Use this template](https://img.shields.io/badge/Use%20this%20template-2ea44f?style=for-the-badge)](https://github.com/YOUR-USERNAME/localgov-lando/generate)
+[![Use this template](https://img.shields.io/badge/Use%20this%20template-2ea44f?style=for-the-badge)](https://github.com/jamesfmcgrath/localgov-lando/generate)
 
 Bootstrap a new LocalGov Drupal project with Lando in seconds.
 
@@ -18,7 +18,7 @@ Bootstrap a new LocalGov Drupal project with Lando in seconds.
 ### Option 2: Manual Clone
 
 ```bash
-git clone https://github.com/YOUR-USERNAME/localgov-lando.git my-project
+git clone https://github.com/jamesfmcgrath/localgov-lando.git my-project
 cd my-project
 rm -rf .git  # Remove git history
 git init     # Start fresh
