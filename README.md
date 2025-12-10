@@ -2,7 +2,7 @@
 
 [![Use this template](https://img.shields.io/badge/Use%20this%20template-2ea44f?style=for-the-badge)](https://github.com/jamesfmcgrath/localgov-lando/generate)
 
-Bootstrap a new LocalGov Drupal project with Lando in seconds.
+Bootstrap a new LocalGov Drupal project quickly with Lando. No local install of Composer or PHP needed. Just Lando.
 
 ## 🚀 Quick Start
 
